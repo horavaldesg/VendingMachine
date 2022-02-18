@@ -48,6 +48,7 @@ public class VendingMachine {
             else if(moneyInserted == 1){
                
             moneyBalance += moneyInserted;
+       
             System.out.println("Money Available: " + moneyBalance);
             System.out.println("Would you like to stop inserting money? If YES press 1 if NO Press 2");
             System.out.print("> ");
@@ -58,6 +59,13 @@ public class VendingMachine {
                 else if(userOption == 2){
                     doneInsteringMoney = false;
                 }
+            }
+            if(moneyBalance > price[choice - 1])
+            {
+            	float change = 0;
+            	change = moneyBalance - price[choice - 1];
+            	System.out.println("Your Change is : " + change);
+            	
             }
            
         }
