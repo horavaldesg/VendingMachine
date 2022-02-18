@@ -9,8 +9,10 @@ public class VendingMachine {
         for(int i = 0; i < snacks.length; i++){
             System.out.print(i + 1 + ") " + snacks[i] + " ");
         }
-
+        
         int choice = 0;
+       System.out.println("");
+       System.out.print("> ");
 
         choice = kb.nextInt();
         switch (choice)
@@ -27,7 +29,37 @@ public class VendingMachine {
             break;
             default: System.out.println("Not an Option");
             break;
-);
+
+        }
+
+        float moneyBalance = 0;
+        int moneyInserted = 0;
+        
+        Boolean doneInsteringMoney = false;
+        while(doneInsteringMoney == false){
+            
+            System.out.println("How much money would you like to insert? (Only One Dollar Bills Accepted)");
+            System.out.print("> ");
+            moneyInserted = kb.nextInt();
+            if(moneyInserted != 1){
+                System.out.println("Only One Dollar Bills Accepted!");
+                doneInsteringMoney = false;
+            }
+            else if(moneyInserted == 1){
+               
+            moneyBalance += moneyInserted;
+            System.out.println("Money Available: " + moneyBalance);
+            System.out.println("Would you like to stop inserting money? If YES press 1 if NO Press 2");
+            System.out.print("> ");
+            int userOption = kb.nextInt();
+                if(userOption == 1){
+                    doneInsteringMoney = true;
+                }
+                else if(userOption == 2){
+                    doneInsteringMoney = false;
+                }
+            }
+           
         }
         
     }
